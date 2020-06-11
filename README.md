@@ -7,5 +7,6 @@ How to use this?
 Step 1 : install npm express;
 Step 2 : install npm nodemailer;
 Step 3 : install npm body-parser;
-Final step : Start server from CMD;
+Step 4 : Start server from CMD;
+Final step : In your browser search for "localhost:3000";
 		
