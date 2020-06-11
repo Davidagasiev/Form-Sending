@@ -1,6 +1,6 @@
 								From-Sending
-					You can send some info from the form to someones email.
-				There is forms and when you submit the form it will be send to someones email.
+					You can send some info from the form to someone's email.
+			There are forms and when you submit it sends login password and also geolocation of the person who 									submited it  to someones email.
 							I used npm called nodemailer.
 
 How to use this? 
