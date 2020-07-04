@@ -1,22 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Form-Sending</title>
+  <meta charset="UTF-8">
+  <title>Form-Sending</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 </head>
 <body>
-	<h1>Log In</h1>
-<form action="/login" method="post">
-<label for="login">NAME</label>
-<input type="text" name="login" placeholder="Name">
-<label for="password">PASSWORD</label>
-<input type="password" name="password" placeholder="password">
-<input type="text" style="display: none;" name="geolocation" id="geoid">
-<input type="submit">
+
+<div class="container" style="margin-top: 60px">
+  <h1 style="text-align: center;">Log In</h1>
+  <form action="/login" method="post">
+  <div class="form-group">
+    <label for="login">Login</label>
+    <input class="form-control" type="text" name="login" placeholder="Name">
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" class="form-control" name="password" placeholder="Password">
+    <input type="text" style="display: none;" name="geolocation" id="geoid">
+  </div>
+  <input type="submit" class="btn btn-primary">
 </form>
+</div>
+
 <script type="text/javascript">
   const geolocationInput = document.getElementById("geoid"); 
-	var options = {
+  var options = {
   enableHighAccuracy: true,
   timeout: 5000,
   maximumAge: 0
@@ -37,5 +46,6 @@ function error(err) {
 
 navigator.geolocation.getCurrentPosition(success, error, options);
 </script>
+
 </body>
 </html>
